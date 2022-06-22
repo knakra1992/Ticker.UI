@@ -1,0 +1,27 @@
+<div class="fade-out row text-center py-2 border fs-2 fw-bold bg-info">
+    <div class="col-4">
+        Ticker Symbol
+    </div>
+    <div class="col-4">
+        Price
+    </div>
+    <div class="col-4">
+        Subscription
+    </div>
+</div>
+<div class="fade-out row border border-2 fs-3 text-center py-2" *ngFor="let t of _tickerService.tickers">
+    <div class="col-4 border-2 border-end">
+        {{t.symbol}}
+    </div>
+    <div class="col-4 border-2 border-end">
+        {{t.price | currency}}
+    </div>
+    <div class="col-4">
+        <button *ngIf="!t.isSubscribed" (click)="subscribeOrUnsubscribe(t, true)" class="btn btn-info text-white fs-3 fade-out">
+            Subscribe
+        </button>
+        <button *ngIf="t.isSubscribed" (click)="subscribeOrUnsubscribe(t, false)" class="btn btn-danger text-white fs-3 fade-out">
+            Unsubscribe
+        </button>
+    </div>
+</div>

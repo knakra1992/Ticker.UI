@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+.fade-out{
+    animation: fade;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+@keyframes fade {
+    from{
+        opacity: 5%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
